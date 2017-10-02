@@ -1,0 +1,1 @@
+﻿scaffold-dbcontext -Connection "Data Source=(localdb)\ProjectsV13;Initial Catalog=TestDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" -Provider Microsoft.EntityFrameworkCore.SqlServer -Context TestDatabaseContext -OutputDir Model

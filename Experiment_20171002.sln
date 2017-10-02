@@ -9,6 +9,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TestDatabase", "TestDatabas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryableExtensions", "QueryableExtensions\QueryableExtensions.csproj", "{1E37BAC4-4DC7-4496-A4A8-7489FE7AC62B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWithEFCore2", "TestWithEFCore2\TestWithEFCore2.csproj", "{DE52805C-4E4F-45FC-B008-0336EC00D900}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{1E37BAC4-4DC7-4496-A4A8-7489FE7AC62B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E37BAC4-4DC7-4496-A4A8-7489FE7AC62B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E37BAC4-4DC7-4496-A4A8-7489FE7AC62B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE52805C-4E4F-45FC-B008-0336EC00D900}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE52805C-4E4F-45FC-B008-0336EC00D900}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE52805C-4E4F-45FC-B008-0336EC00D900}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE52805C-4E4F-45FC-B008-0336EC00D900}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
