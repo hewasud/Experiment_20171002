@@ -8,9 +8,10 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>TestWithEF6</RootNamespace>
     <AssemblyName>TestWithEF6</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,11 +45,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Models\ContosoModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContosoModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContosoModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContosoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ContosoModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContosoModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Course.cs">
+      <DependentUpon>ContosoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Enrollment.cs">
+      <DependentUpon>ContosoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Student.cs">
+      <DependentUpon>ContosoModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestWithEF6.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Models\ContosoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ContosoModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\ContosoModel.edmx.diagram">
+      <DependentUpon>ContosoModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="EntityFramework">
+      <Version>6.1.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QueryableExtensions\QueryableExtensions.csproj">
+      <Project>{1e37bac4-4dc7-4496-a4a8-7489fe7ac62b}</Project>
+      <Name>QueryableExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\ContosoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ContosoModel.edmx</DependentUpon>
+      <LastGenOutput>ContosoModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ContosoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ContosoModel.edmx</DependentUpon>
+      <LastGenOutput>ContosoModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
